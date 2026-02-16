@@ -29,24 +29,22 @@ export default function Navbar() {
   const pathname = usePathname();
   const { i18n, t } = useTranslation();
 
+  const isRtl = i18n.language === "ar";
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // منع السكرول في الصفحة الخلفية عند فتح القائمة
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "unset";
   }, [open]);
 
-  // تحديث اتجاه الصفحة بناءً على اللغة الحالية
   useEffect(() => {
-    const lang = (i18n.language as "ar" | "en") || "ar";
-    if (typeof document !== "undefined") {
-      document.documentElement.lang = lang;
-      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-    }
+    const lang = i18n.language || "ar";
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   }, [i18n.language]);
 
   const toggleLanguage = () => {
@@ -60,14 +58,16 @@ export default function Navbar() {
         className={cn(
           "fixed inset-x-0 top-0 z-[80] w-full transition-all duration-300",
           scrolled
-            ? " bg-white/70 backdrop-blur-md  dark:bg-black/70"
-            : "bg-transparent"
+            ? "bg-white/80 backdrop-blur-md dark:bg-black/80 shadow-sm"
+            : "bg-primary dark:bg-primary/90"
         )}
       >
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 bg-primary/80">
-          {/* Logo */}
-          <Link href="/" className="group flex items-center gap-3 transition-transform active:scale-95">
-            <div className="relative h-10 w-10 overflow-hidden rounded-xl ">
+        {/* التعديل هنا: قمنا بتغيير max-w إلى full أو قيمة أكبر جداً لضمان ذهاب الروابط للأطراف */}
+        <div className="mx-auto flex h-16 w-full items-center justify-between px-6 lg:px-12">
+          
+          {/* Logo - سيبقى دائماً أقصى اليسار (أو اليمين في العربي) */}
+          <Link href="/" className="group flex items-center gap-3 transition-transform active:scale-95 shrink-0">
+            <div className="relative h-10 w-10 overflow-hidden rounded-xl">
               <Image
                 src={logoSrc}
                 alt="AMB logo"
@@ -78,17 +78,11 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <span className="text-lg font-bold tracking-tight text-black dark:text-white">AMB</span>
+            <span className="text-xl font-extrabold tracking-tight text-black dark:text-white">AMB</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <motion.nav
-            key={i18n.language}
-            initial={{ opacity: 0, y: -4 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.25 }}
-            className="hidden items-center gap-1 md:flex"
-          >
+          {/* Desktop Navigation - ستتحرك جهة اليمين (أو اليسار في العربي) */}
+          <nav className="hidden items-center gap-2 md:flex">
             {navLinks.map((link) => {
               const active = pathname === link.href;
               return (
@@ -96,20 +90,13 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "relative px-4 py-2 text-sm font-medium transition-colors",
+                    "relative px-4 py-2 text-sm font-medium transition-all",
                     active
-                      ? "text-primary dark:text-white font-bold"
-                      : "text-black/50 hover:text-black dark:text-white/100 dark:hover:text-primary"
+                      ? "text-black dark:text-white font-bold"
+                      : "text-black/60 hover:text-black dark:text-white/70 dark:hover:text-white"
                   )}
                 >
-                  <motion.span
-                    key={i18n.language}
-                    initial={{ opacity: 0, y: 4 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {t(link.key)}
-                  </motion.span>
+                  <span className="relative z-10">{t(link.key)}</span>
                   {active && (
                     <motion.div
                       layoutId="nav-underline"
@@ -120,37 +107,31 @@ export default function Navbar() {
               );
             })}
 
-            {/* Language toggle (desktop) */}
+            {/* Language toggle */}
             <button
               type="button"
               onClick={toggleLanguage}
-              className="ml-4 rounded-full border border-black/10 px-3 py-1 text-xs font-semibold text-black/70 transition hover:bg-black/5 dark:border-white/100 dark:text-white/100 dark:hover:bg-white/10"
+              className="mx-4 rounded-full border border-black/10 px-4 py-1.5 text-xs font-bold transition hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/10"
             >
-              {i18n.language === "ar" ? "EN" : "ع"}
+              {isRtl ? "EN" : "العربية"}
             </button>
 
-            <div className="ml-4 h-6 w-[1px] bg-black/10 dark:bg-white/10" />
+            <div className="h-6 w-[1px] bg-black/10 dark:bg-white/10" />
+
             <Link
               href="/our-product"
-              className="ml-4 rounded-full bg-black px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-main hover:text-white hover:shadow-lg active:scale-95 dark:bg-white dark:text-black"
+              className="ml-6 rounded-full bg-black px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition-all hover:bg-zinc-800 hover:shadow-xl active:scale-95 dark:bg-white dark:text-black shrink-0"
             >
-              <motion.span
-                key={i18n.language + "-cta"}
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                {t("nav.ourProduct")}
-              </motion.span>
+              {t("nav.ourProduct")}
             </Link>
-          </motion.nav>
+          </nav>
 
           {/* Hamburger Button (Mobile) */}
           <button
             onClick={() => setOpen(true)}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-black/5 transition-colors hover:bg-black/10 md:hidden dark:bg-white/5 dark:hover:bg-white/10"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-black/5 transition-colors hover:bg-black/10 md:hidden dark:bg-white/5 dark:hover:bg-white/10"
           >
-            <div className="flex flex-col gap-1 items-end">
+            <div className="flex flex-col gap-1.5 items-end">
               <span className="h-0.5 w-6 bg-current" />
               <span className="h-0.5 w-4 bg-current" />
               <span className="h-0.5 w-5 bg-current" />
@@ -159,89 +140,76 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Side Menu Drawer */}
-      <AnimatePresence>
+      {/* Side Menu Drawer - (بقيت كما هي) */}
+      <AnimatePresence mode="wait">
+        {/* ... (باقي كود الموبايل كما هو) ... */}
         {open && (
-          <>
-            {/* Dark Overlay */}
+           <>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 z-[90] bg-black/30 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-[90] bg-black/40 backdrop-blur-md md:hidden"
             />
 
-            {/* Side Drawer Content */}
             <motion.div
-              initial={{ x: "100%" }}
+              initial={{ x: isRtl ? "100%" : "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 z-[100] h-full w-[300px] bg-white shadow-2xl dark:bg-[#0a0a0a] md:hidden"
+              exit={{ x: isRtl ? "100%" : "-100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              className={cn(
+                "fixed top-0 z-[100] h-full w-[85%] max-w-[350px] bg-white p-8 shadow-2xl dark:bg-[#0a0a0a] md:hidden",
+                isRtl ? "right-0" : "left-0"
+              )}
             >
-              <div className="flex flex-col h-full p-8 bg-sky">
-                {/* Close Button */}
+              <div className="flex flex-col h-full">
                 <button
                   onClick={() => setOpen(false)}
-                  className="self-end p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5"
+                  className="self-end p-3 rounded-full bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10"
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                     <path d="M18 6L6 18M6 6l12 12" />
                   </svg>
                 </button>
 
-                {/* Language toggle (mobile) */}
-                <button
-                  type="button"
-                  onClick={toggleLanguage}
-                  className="mt-4 inline-flex w-fit items-center justify-center rounded-full border border-black/15 px-4 py-1.5 text-xs font-semibold text-black/80 transition hover:bg-black/5 dark:border-white/20 dark:text-white/80 dark:hover:bg-white/10"
-                >
-                  {i18n.language === "ar" ? "EN" : "ع"}
-                </button>
+                <nav className="mt-16 flex flex-col gap-6">
+                  {navLinks.map((link, i) => {
+                    const active = pathname === link.href;
+                    return (
+                      <motion.div
+                        key={link.href}
+                        initial={{ x: isRtl ? 20 : -20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: i * 0.1 }}
+                      >
+                        <Link
+                          href={link.href}
+                          onClick={() => setOpen(false)}
+                          className={cn(
+                            "text-3xl font-bold transition-colors",
+                            active ? "text-primary" : "text-black/40 dark:text-white/40"
+                          )}
+                        >
+                          {t(link.key)}
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                </nav>
 
-                {/* Mobile Links */}
-                <nav className="mt-12 flex flex-col gap-4">
-  {navLinks.map((link, i) => {
-    const active = pathname === link.href;
-    return (
-      <motion.div
-        key={link.href}
-        initial={{ x: 20, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: i * 0.1 }}
-      >
-        <Link
-          href={link.href}
-          onClick={() => setOpen(false)}
-          className={cn(
-            "relative block w-fit py-2 text-2xl font-semibold transition-colors",
-            active
-              ? "text-black dark:text-white font-bold"
-              : "text-black/40 dark:text-white/100 "
-          )}
-        >
-          {t(link.key)}
-
-          {active && (
-            <motion.div
-              layoutId="nav-underline-mobile"
-              className="absolute bottom-0 left-0 right-0 h-0.5 bg-black dark:bg-white"
-              transition={{ type: "spring", stiffness: 380, damping: 30 }}
-            />
-          )}
-        </Link>
-      </motion.div>
-    );
-  })}
-</nav>
-
-                {/* Mobile CTA */}
-                <div className="mt-auto">
+                <div className="mt-auto space-y-6">
+                  <button
+                    onClick={toggleLanguage}
+                    className="flex w-full items-center justify-center rounded-xl border border-black/10 py-4 font-bold dark:border-white/10"
+                  >
+                    {isRtl ? "Switch to English" : "التغيير للعربية"}
+                  </button>
+                  
                   <Link
                     href="/our-product"
                     onClick={() => setOpen(false)}
-                    className="flex w-full items-center justify-center rounded-2xl bg-black py-5 text-sm font-bold tracking-widest text-white uppercase dark:bg-white dark:text-black transition-transform active:scale-95"
+                    className="flex w-full items-center justify-center rounded-2xl bg-black py-5 text-sm font-bold tracking-widest text-white uppercase dark:bg-white dark:text-black"
                   >
                     {t("nav.ourProduct")}
                   </Link>
