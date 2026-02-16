@@ -1,10 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cairo, Rubik, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "../components/Navbar";
+import SocialMediaBubble from "../components/SocialMediaBubble";
+import Footer from "../components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const cairo = Cairo({
+  variable: "--font-cairo",
+  subsets: ["latin", "arabic"],
+  weight: ["200", "300", "400", "600", "700", "900"],
+  display: "swap",
+});
+
+const rubik = Rubik({
+  variable: "--font-rubik",
   subsets: ["latin"],
+  weight: [
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
+  ],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -25,9 +45,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cairo.variable} ${rubik.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Navbar />
+        <main className="pt-16">{children}</main>
+        <Footer />
+        <SocialMediaBubble />
       </body>
     </html>
   );

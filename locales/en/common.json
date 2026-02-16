@@ -1,0 +1,672 @@
+{
+  "brand": "Saudi Invention",
+  "hero": {
+    "titleMain": "Tech That Talks To You !",
+    "titleHighlight": "",
+    "description": "Smart Electronics Shopping"
+  },
+  "cta": {
+    "primary": "Discover now",
+    "secondary": "Contact us"
+  },
+  "nav": {
+    "aboutUs": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "faq": "FAQ",
+    "ourProduct": "Our Product"
+  },
+  "contactPage": {
+    "breadcrumbHome": "Home",
+    "breadcrumbTitle": "Contact",
+    "title": "Contact Us",
+    "lead": "We’d love to hear from you. We’re here to answer your questions, listen to your suggestions, and help with bookings and requests.",
+    "subtitle": "Contact Us",
+    "subLead": "We’re here to answer your questions and hear your suggestions.",
+    "country": "Country",
+    "countryValue": "Saudi Arabia",
+    "cityValue": "Khobar, Al Rakah, Southern District",
+    "emailLabel": "Email",
+    "emailHint": "Send us a message and we’ll get back to you soon.",
+    "socialTitle": "Follow us",
+    "form": {
+      "title": "Send a message",
+      "lead": "Fill in the details below and we’ll reach out shortly.",
+      "firstName": "First name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "Enter your last name",
+      "email": "Email",
+      "emailPlaceholder": "name@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Write your message here…",
+      "consent": "By submitting this form, you agree to the processing of your data in accordance with",
+      "privacy": "our Privacy Policy",
+      "submit": "Send message"
+    }
+  },
+  "privacyPage": {
+    "breadcrumbHome": "Home",
+    "breadcrumbTitle": "Privacy",
+    "title": "Privacy Policy",
+    "lead": "This Privacy Policy explains what information we collect, how we use it, and how we protect your data.",
+    "tabs": {
+      "privacy": "Privacy Policy",
+      "accountDeletion": "Account Deletion",
+      "terms": "Terms & Conditions",
+      "returns": "Return & Exchange Policy"
+    },
+    "collect": {
+      "title": "Information We Collect",
+      "intro": "We collect the following information:",
+      "bullets": [
+        "Permissions for Bluetooth, Wi‑Fi, and Location to connect to our servers and sensor devices.",
+        "Email address and password when you register or log in."
+      ],
+      "note": "We do not collect any other personal information or share your data with third parties."
+    },
+    "use": {
+      "title": "How We Use Your Information",
+      "intro": "Your information is used to:",
+      "bullets": [
+        "Authenticate your account and provide access to the app features.",
+        "Enable connectivity with sensor devices via Bluetooth, Wi‑Fi, and Location services."
+      ]
+    },
+    "security": {
+      "title": "Data Sharing & Security",
+      "sharingTitle": "Data Sharing",
+      "sharingBody": "We do not share your personal information with any third parties.",
+      "dataSecurityTitle": "Data Security",
+      "dataSecurityBody": "We implement appropriate security measures to protect your data from unauthorized access, alteration, or disclosure."
+    },
+    "rights": {
+      "title": "Your Rights, Children’s Privacy, and Updates",
+      "yourRightsTitle": "Your Rights",
+      "yourRightsBody": "You have the right to delete your account and personal data at any time.",
+      "childrenTitle": "Children’s Privacy",
+      "childrenBody": "Our app is intended for users of all ages and does not contain content specifically for children under 18.",
+      "changesTitle": "Changes to This Privacy Policy",
+      "changesBody": "We may update this Privacy Policy occasionally. We will notify you of any significant changes through the app or via email.",
+      "contactTitle": "Contact Us",
+      "contactBody": "If you have any questions or concerns about this Privacy Policy, please contact us at:",
+      "contactCta": "Go to Contact page"
+    }
+  },
+  "accountDeletionPage": {
+    "breadcrumbHome": "Home",
+    "breadcrumbPrivacy": "Privacy",
+    "breadcrumbTitle": "Account Deletion",
+    "title": "Account Deletion",
+    "lead": "This page explains how to delete your Protek account from inside the app and what happens to your data.",
+    "deleteInsideTitle": "Delete your account inside the app",
+    "deleteInsideIntro": "Follow these steps:",
+    "deleteSteps": [
+      "Open Protek and go to Settings (or Account).",
+      "Tap Delete Account.",
+      "Confirm your choice."
+    ],
+    "deleteInsideNote": "Deletion happens immediately. If you’re asked to sign in again, it’s for security (recent login required).",
+    "deletedTitle": "What data is deleted",
+    "deletedData": [
+      "Your authentication record (email/username) is stored in Firebase Authentication.",
+      "Any app data tied only to your authentication record (if applicable)."
+    ],
+    "noEmail": "No confirmation email is sent, but the app shows a confirmation state after deletion.",
+    "mayRemainTitle": "What may remain temporarily",
+    "mayRemain": [
+      "System logs or encrypted backups maintained by our infrastructure providers may persist for a limited period for security, fraud prevention, or legal compliance.",
+      "These are automatically purged on a rolling schedule (typically within 90 days) and are not used to recreate your account."
+    ],
+    "safetyTitle": "Data safety & encryption",
+    "safety": [
+      "All data is encrypted in transit (HTTPS/TLS).",
+      "We do not sell personal data.",
+      "If your child uses the app, we follow Google Play Families Policy requirements. No advertising IDs are used for children."
+    ],
+    "withoutTitle": "Delete data without deleting your account",
+    "withoutDeletion": [
+      "If the app includes options like “Clear history” or “Reset progress,” you can use them without deleting the entire account.",
+      "Otherwise, contact us and we’ll help."
+    ],
+    "contactTitle": "Contact Us",
+    "contactBody": "If you have any questions about account deletion or your data, contact us at:"
+  },
+  "termsPage": {
+    "title": "Terms and Conditions for Using the Protek Device",
+    "lead": "Please read these terms carefully before using the device.",
+    "points": [
+      "The user is required to read the accompanying user manual before operating the device and to ensure compliance with the instructions contained therein.",
+      "The company shall not be held liable for any damages resulting from misuse of the device or from using it for purposes other than its intended function.",
+      "The company shall not be held liable for any malfunctions resulting from improper installation of the device.",
+      "The company shall not be held liable for any interruption in the device’s operation in the event of a power outage or instability/disruption of the power supply.",
+      "In the event that the device is connected to an application or a mobile phone, the company shall not be held liable for any malfunction arising from: phone failure or non-functionality, interruption or suspension of internet or network services, deletion or deactivation of the application linked to the device, or failure to enable or receive the device’s notifications.",
+      "The company shall not be held liable for any malfunctions resulting from modifications to, or unauthorized access to, the device by non-authorized parties.",
+      "The company reserves the right to update or amend these Terms and Conditions at any time without prior notice."
+    ],
+    "acceptance": "Use of the device constitutes the user’s full acceptance of these Terms and Conditions."
+  },
+  "returnsPage": {
+    "title": "Return and Exchange Policy",
+    "lead": "We are committed to ensuring our customers’ satisfaction and trust. Therefore, we offer a flexible return and exchange policy in accordance with the regulations in force in the Kingdom of Saudi Arabia and the GCC countries.",
+    "return": {
+      "title": "First: Return Policy",
+      "intro": "Customers may request a product return within 7 days from the date of receipt in the following cases:",
+      "points": [
+        "The product arrived damaged or with a manufacturing defect.",
+        "The customer received a different item from the one ordered.",
+        "The product must be in its original condition, unused, and include all accessories and original packaging.",
+        "The product will be inspected by our support team before approving the return. Once approved, the refund will be processed within 5 to 10 business days using the original payment method.",
+        "Returns do not apply to products that have been opened, used, or tampered with, unless a manufacturing defect is confirmed."
+      ]
+    },
+    "exchange": {
+      "title": "Second: Exchange Policy",
+      "intro": "Products may be exchanged for another item within 7 days of receipt, provided they are in their original condition and have not been used.",
+      "points": [
+        "In the event of a manufacturing defect, the company will cover all shipping and exchange costs."
+      ]
+    },
+    "notesTitle": "Important Notes",
+    "notes": [
+      "Customers must contact us through Customer Service or by email before sending any product for return or exchange.",
+      "Refunds cannot be issued for orders paid using gift vouchers or discount coupons.",
+      "The company reserves the right to refuse any return or exchange request that does not meet the conditions stated above.",
+      "If the product is received after the specified period or not in its original condition, the request will not be accepted."
+    ]
+  },
+  "faqPage": {
+    "breadcrumbHome": "Home",
+    "breadcrumbTitle": "FAQ",
+    "title": "Frequently Asked Questions",
+    "lead": "Quick answers to common questions about the Protek device, purchasing, payments, shipping, and support.",
+    "items": [
+      {
+        "id": "what-is-protek",
+        "q": "1. What is the Protek Device?",
+        "a": "The Protek Device is a compact, smart electronic gadget designed to be your companion in emergencies. It features advanced sensors, audible alerts, and app notifications. The device activates upon voice command or when it detects a fall or fainting—alerting those nearby or sending emergency signals."
+      },
+      {
+        "id": "kids-elderly",
+        "q": "2. Can the device be used by children or the elderly?",
+        "a": "Yes. The device is designed to be suitable for all age groups—especially children and the elderly—providing safety and reassurance while on the move or in emergency situations."
+      },
+      {
+        "id": "internet",
+        "q": "3. Does the device work without internet?",
+        "a": "The device operates using a SIM card for GPS and alert services. Alternatively, it can connect via Wi‑Fi if available."
+      },
+      {
+        "id": "subscription",
+        "q": "4. Is a monthly subscription required?",
+        "a": "There is no monthly subscription required from our side. However, a SIM card with a light data plan is needed to enable tracking and alert features."
+      },
+      {
+        "id": "buy",
+        "q": "5. How can I purchase the device?",
+        "a": "You can place your order directly through our website, with the option to pay in installments via Tamara or Tabby.",
+        "cta": { "label": "🛒 Shop Now", "href": "/our-product" }
+      },
+      {
+        "id": "payment",
+        "q": "6. What payment methods are available?",
+        "bullets": [
+          "Our official website",
+          "Credit cards (Visa / Mastercard)",
+          "Tamara (Pay later or interest‑free installments)",
+          "Tabby (Buy now, pay later)"
+        ]
+      },
+      {
+        "id": "shipping",
+        "q": "7. Do you ship internationally?",
+        "a": "Yes. We offer shipping both within and outside the Kingdom of Saudi Arabia."
+      },
+      {
+        "id": "support",
+        "q": "8. What should I do if I encounter an issue with the device?",
+        "a": "Our support team is always available via email or WhatsApp. You can also reach out to us through the Contact page.",
+        "cta": { "label": "Contact Us", "href": "/contact" }
+      }
+    ]
+  },
+  "features": {
+    "realtimeTitle": "Real-time monitoring",
+    "realtimeBody": "Our Survival System offers real-time monitoring, ensuring immediate response and enhanced safety.",
+    "screenTitle": "On-site display",
+    "screenBody": "We provide a monitoring screen in target areas, showing whether the room is occupied or not, with status-related insights.",
+    "appTitle": "User-friendly application",
+    "appBody": "The intuitive application enables medical staff to efficiently monitor alerts and emergencies."
+  },
+  "device": {
+    "kicker": "Smart emergency companion",
+    "title": "Designed to be your intelligent companion in emergencies",
+    "description": "A compact, palm-sized device equipped with audio and visual alerts, a temperature sensor, and advanced location tracking. Available in two versions—wall-mounted and ceiling-mounted—so it can protect you anywhere: on a walk, at home, or at work, sending alerts on your behalf.",
+    "imageAlt": "Device screenshot",
+    "bullets": {
+      "autoAlertsTitle": "Automatic emergency alerts",
+      "autoAlertsBody": "Instant audio/visual alerts to speed up response.",
+      "distressTitle": "Distress signal transmission",
+      "distressBody": "Send help requests with status and location details.",
+      "appTitle": "Modern, user-friendly mobile application",
+      "appBody": "A clean interface to monitor and manage alerts easily."
+    }
+  },
+  "iphoneShowcase": {
+    "kicker": "Device indicators",
+    "title": "Color screens that change on scroll",
+    "scrollHint": "Scroll to change the color",
+    "stepLabel": "Color",
+    "items": [
+      {
+        "id": "red-alert",
+        "title": "Critical emergency (Red)",
+        "body": " Red light: Instant alarm for fall detection and critical emergencies.",
+        "imageAlt": "Red alert screen"
+      },
+      {
+        "id": "yellow-warning",
+        "title": "Stasis monitoring (Yellow)",
+        "body": " Yellow light: Detects abnormal immobility and keeps monitoring the situation.",
+        "imageAlt": "Yellow warning screen"
+      },
+      {
+        "id": "green-safe",
+        "title": "Safe status (Green)",
+        "body": " Green light: Everything is normal with a simple, clear status view.",
+        "imageAlt": "Green status screen"
+      },
+      {
+        "id": "blue-idle",
+        "title": "Standby mode (Blue)",
+        "body": " Blue light: The device is online and ready with no active alarms.",
+        "imageAlt": "Blue standby screen"
+      }
+    ]
+  },
+  "aboutPage": {
+    "breadcrumbHome": "Home",
+    "breadcrumbTitle": "About Us",
+    "heroKicker": "AMB",
+    "heroTitle": "From Innovation… to Safety",
+    "heroLead": "In a world where technology moves fast, AMB redefines your relationship with electronics—not merely as tools, but as partners in safety.",
+    "storyTitle": "Our story",
+    "storyBody": [
+      "We are an ambitious Saudi startup founded with a clear vision: to build smart technologies that save lives and protect what matters most.",
+      "Our name, AMB, comes from the initials of our founder, Aziz Mohammed Al‑Barik—but our mission goes far beyond a name. It’s a mission of life."
+    ],
+    "offerTitle": "What do we offer?",
+    "offerBody": [
+      "In our first phase, we introduce “Protek”—an innovative, compact smart device designed specifically for emergency situations.",
+      "It seamlessly integrates sensing, alerting, and precise location tracking—serving as your first intelligent line of defense in critical moments."
+    ],
+    "missionTitle": "Our mission",
+    "missionBody": "To make safety accessible for everyone, everywhere—through technology that is simple, yet smart.",
+    "visionTitle": "Our vision",
+    "visionBody": "To become the leading choice in the region for survival, emergency, and safety tech solutions—while contributing to the goals of Saudi Vision 2030 in innovation and digital transformation.",
+    "valuesTitle": "Our core values",
+    "values": [
+      "Safety first",
+      "Continuous innovation",
+      "Privacy & trust",
+      "User‑friendly design",
+      "Customer service as it should be"
+    ],
+    "differentTitle": "What sets us apart?",
+    "different": [
+      "A smart device that speaks for you when you can’t.",
+      "A Saudi digital platform with a global mindset.",
+      "Products designed to protect families, children, and the elderly."
+    ],
+    "closing": "We are AMB—we don’t just sell devices; we offer peace of mind. And while we’re just at the beginning… we’re planning something much bigger.",
+    "chooseTitle": "Why choose AMB?",
+    "choose": [
+      "A Saudi platform with a global vision",
+      "Innovation serving safety and security",
+      "Aligned with Saudi Vision 2030",
+      "24/7 technical and customer support",
+      "The future of safety electronics starts here"
+    ]
+  },
+  "blogPage": {
+    "breadcrumbHome": "Home",
+    "breadcrumbTitle": "Blog",
+    "heroKicker": "Our news",
+    "heroTitle": "Falls",
+    "heroLead": "Falls aren’t minor incidents—they’re a global health challenge, and delayed response can turn a manageable situation into serious complications. Here’s the problem, and why speed matters.",
+    "tag": "Blog",
+    "step": "Step",
+    "problem": {
+      "title": "The problem",
+      "paragraphs": [
+        "Globally, falls are a major public health problem. An estimated 684,000 fatal falls occur each year, making it the second leading cause of unintentional injury death after road traffic injuries.",
+        "Over 80% of fall-related fatalities occur in low- and middle-income countries, with regions of the Western Pacific and South‑East Asia accounting for 60% of these deaths. In all regions, death rates are highest among adults over the age of 60.",
+        "Though not fatal, approximately 37.3 million falls severe enough to require medical attention occur each year.",
+        "Globally, falls are responsible for over 38 million DALYs (disability-adjusted life years) lost each year, resulting in more years lived with disability than transport injury, drowning, burns, and poisoning combined.",
+        "People who fall and suffer disability—especially older adults—are at a major risk for long‑term care and institutionalization."
+      ]
+    },
+    "challenge": {
+      "title": "The challenge: falls among the elderly",
+      "intro": [
+        "Falls are a leading cause of serious injury in older adults—often resulting in fractures, head trauma, or worse when medical help is delayed.",
+        "Many elderly individuals live alone, which can mean hours or even days without assistance. This not only endangers their health but causes constant anxiety for their families."
+      ]
+    },
+    "solution": {
+      "title": "The solution: Protek by AMB",
+      "points": [
+        "Advanced fall detection: smart sensors detect abnormal movement patterns automatically—no wearables or buttons.",
+        "Instant alerts: real‑time notifications to family or caregivers via a dedicated app to ensure quick intervention.",
+        "Privacy first: no cameras or microphones—discreet, reliable sensing only.",
+        "Versatile design: easy installation in homes, hospitals, and care facilities without structural changes.",
+        "Smart app: alerts, activity reports, and weekly/monthly insights."
+      ]
+    },
+    "benefits": {
+      "title": "Key benefits",
+      "items": [
+        "Boosts confidence for the elderly",
+        "Peace of mind for families",
+        "Improves quality of care",
+        "Cuts healthcare costs"
+      ]
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "steps": [
+        { "title": "Simple setup", "body": "Install the device in any key room (bedroom, bathroom, etc.)." },
+        { "title": "Smart monitoring", "body": "Continuously analyzes movement patterns and detects falls in real time." },
+        { "title": "Real‑time notifications", "body": "Alerts are sent through the mobile app to caregivers or family." }
+      ]
+    },
+    "delayImpact": {
+      "title": "The impact of delayed response",
+      "items": [
+        "Higher risk of permanent injury",
+        "Longer hospital stays",
+        "Higher medical costs",
+        "Emotional trauma and loss of independence"
+      ]
+    },
+    "closing": "Protek is more than a device—it’s a commitment to dignity, safety, and peace of mind.",
+    "cta": "Contact us now",
+    "contact": {
+      "website": "azizamb.com",
+      "email": "info@amiaksa.com",
+      "phone": "+966593737239"
+    },
+    "quickResponse": {
+      "title": "How does delayed response to falls affect health and life?",
+      "intro": [
+        "Falls are a major health risk, especially for older adults. While they can happen to anyone, the elderly are particularly vulnerable to serious consequences if help is delayed.",
+        "According to the World Health Organization, 1 in 3 seniors experiences a fall annually—and half cannot get up without help. Delayed intervention can cause severe complications or even death."
+      ],
+      "sections": [
+        {
+          "title": "Health impacts of delayed response",
+          "items": [
+            "Worsening physical injuries: minor injuries can become serious if not treated promptly.",
+            "Risks include hip fractures, internal bleeding, and head trauma—sometimes requiring surgery or causing long‑term damage.",
+            "Complications from prolonged immobility: severe dehydration, low blood pressure, muscle breakdown, blood clots, and pressure sores."
+          ]
+        },
+        {
+          "title": "Psychological & emotional effects",
+          "items": [
+            "Fear of falling again",
+            "Loss of independence",
+            "Depression, social withdrawal, and chronic anxiety"
+          ]
+        }
+      ],
+      "conclusion": "Timely intervention after a fall is often the difference between recovery and life‑threatening complications. With smart technologies like Protek, families and caregivers can protect vulnerable loved ones day and night."
+    },
+    "sidebar": {
+      "card1": {
+        "title": "Our news",
+        "body": "Updates and awareness content about safety and emergencies."
+      },
+      "card2": {
+        "title": "Download",
+        "body": "A quick summary of key points and contact details."
+      }
+    }
+  },
+  "blogPage2": {
+    "breadcrumbHome": "Home",
+    "breadcrumbTitle": "Blog",
+    "heroKicker": "Blog",
+    "heroTitle": "Contactless Technology in Healthcare: A Game‑Changer",
+    "heroLead": "The benefits of contactless technology in healthcare: a silent revolution transforming the future of medicine.",
+    "tag": "Blog",
+    "step": "Step",
+    "contactless": {
+      "title": "The benefits of contactless technology in healthcare",
+      "subtitle": "A silent revolution transforming the future of medicine",
+      "intro": [
+        "What is contactless technology?",
+        "Contactless technology refers to intelligent systems that monitor a patient’s health using radar, sensors, or Wi‑Fi signals—without physical contact or cameras.",
+        "This innovation became particularly vital after the COVID‑19 pandemic, offering a safer and more efficient way to provide care."
+      ],
+      "benefitsTitle": "Key benefits of contactless healthcare technology",
+      "benefits": [
+        {
+          "title": "Minimizing infection risk",
+          "body": "In hospitals and care facilities, reducing direct contact is crucial. Contactless systems can monitor breathing, movement, and falls without physical interaction—significantly lowering the chance of cross‑infection."
+        },
+        {
+          "title": "Ensuring patient privacy",
+          "body": "Unlike traditional camera‑based monitoring, contactless solutions—such as the Protek device—do not capture images and do not require the patient to wear any hardware. This enhances comfort and privacy, especially in sensitive environments like nursing homes."
+        },
+        {
+          "title": "24/7 continuous monitoring",
+          "body": "These systems provide real‑time insights (respiration rate, movement, fall detection), enabling timely response and reducing complications from delayed medical attention—especially when fast intervention matters."
+        },
+        {
+          "title": "Ideal for elderly & special needs individuals",
+          "body": "No buttons to press, no devices to wear. The system operates silently and continuously—ideal for people with Alzheimer’s disease, mobility limitations, or cognitive impairments."
+        },
+        {
+          "title": "Supporting staff & reducing workload",
+          "body": "Through smart automation, healthcare teams can reduce routine monitoring tasks and focus more on critical care—improving efficiency and reducing burnout."
+        }
+      ],
+      "closing": "A life‑saving necessity, not a luxury. Contactless healthcare has evolved from a futuristic concept into a practical necessity. With advanced solutions like Protek, it’s now possible to deliver precise, private, proactive care—especially for vulnerable populations."
+    },
+    "comparison": {
+      "title": "Traditional fall detection vs. smart AI‑based systems",
+      "lead": "Discover the difference between traditional fall detection devices and modern smart solutions like Protek. Take the first step toward safer, more efficient care.",
+      "whyTitle": "Why is fall detection critically important?",
+      "why": {
+        "paragraphs": [
+          "In healthcare, falls are among the most common and serious incidents—especially for elderly and special‑needs individuals.",
+          "Delayed response after a fall significantly increases the risk of death or severe health complications."
+        ]
+      },
+      "table": {
+        "feature": "Feature",
+        "smart": "Smart systems like Protek",
+        "traditional": "Traditional solutions",
+        "rows": [
+          { "feature": "Requires user intervention?", "smart": "No—automatic operation", "traditional": "Yes (panic button, pull cord, wearable)" },
+          { "feature": "Continuous monitoring?", "smart": "Yes—24/7", "traditional": "Often no—depends on user awareness" },
+          { "feature": "Accuracy & speed?", "smart": "AI‑based—more accurate and faster", "traditional": "Depends on patient/others response" },
+          { "feature": "Privacy?", "smart": "No cameras—full privacy", "traditional": "Some systems use cameras" },
+          { "feature": "Installation?", "smart": "Easy installation within minutes", "traditional": "Sometimes complex—wiring/physical setup" },
+          { "feature": "Operating cost?", "smart": "One effective unit can replace many", "traditional": "Maintenance + multiple devices" }
+        ]
+      },
+      "closing": "While traditional systems were effective in their time, AI and contactless technology provide a safer, more efficient, privacy‑respecting alternative. Protek offers peace of mind for you and your family.",
+      "cta": "Contact us now for a free demo",
+      "betterTitle": "Why is Protek a better option?",
+      "betterPoints": [
+        "Peace of mind: no need to remind the patient to use any device.",
+        "Safety: instant alerts in case of a fall or danger.",
+        "Integration: can be linked with emergency systems or healthcare providers."
+      ],
+      "whoTitle": "Who are these smart devices suitable for?",
+      "whoItems": [
+        "Elderly individuals living alone",
+        "Patients after surgery",
+        "Healthcare facilities and hospitals",
+        "Caregivers who require additional support"
+      ]
+    },
+    "hospitals": {
+      "title": "Why hospitals should adopt early fall detection technologies",
+      "lead": "Falls in hospitals are a major safety risk—especially for elderly and post‑operative patients. Delayed response can lead to serious injuries, longer stays, or life‑threatening complications.",
+      "benefitsTitle": "Key benefits of smart detection systems like Protek",
+      "benefits": [
+        "Instant emergency response with real‑time alerts to medical staff.",
+        "Improved patient care via 24/7 monitoring without constant bedside presence.",
+        "Prevention of repeat falls through AI analytics and pattern detection.",
+        "Cost reduction by avoiding expensive complications and extended care.",
+        "Better hospital reputation and increased trust from patients and families.",
+        "Operational efficiency by reducing routine monitoring workload."
+      ],
+      "cta": "Start now with a free trial"
+    },
+    "burden": {
+      "title": "How smart health technology alleviates the global burden on healthcare systems",
+      "lead": "Discover how contactless smart devices reduce pressure on emergency services and staff, lower costs, and improve efficiency worldwide.",
+      "contextTitle": "Context and challenge",
+      "context": [
+        "Rapidly aging populations",
+        "Rising prevalence of chronic diseases",
+        "Persistent shortages of medical personnel"
+      ],
+      "roleTitle": "Role of smart technologies (e.g., Protek)",
+      "role": [
+        {
+          "title": "Early detection & timely intervention",
+          "body": "Real‑time monitoring enables immediate response to falls or breathing anomalies, preventing deterioration and reducing ICU admissions."
+        },
+        {
+          "title": "Optimized resource allocation",
+          "body": "Automated surveillance reduces manual supervision so professionals can focus on complex, high‑priority cases."
+        },
+        {
+          "title": "Home‑based & remote care",
+          "body": "Safe remote monitoring supports patient‑centered models, reducing hospitalizations and readmissions."
+        },
+        {
+          "title": "Cost efficiency & sustainability",
+          "body": "Fewer emergency visits, shorter stays, and fewer preventable incidents lead to significant savings and better resource use."
+        }
+      ],
+      "conclusion": "With growing demographic and clinical challenges, smart health technologies are no longer a luxury—they’re essential for efficient, responsive, patient‑focused healthcare systems."
+    },
+    "sidebar": {
+      "card1": { "title": "Our news", "body": "Articles and updates on safety, emergencies, and healthcare." },
+      "card2": { "title": "Download", "body": "Download a quick summary and contact details." }
+    },
+    "problem": { "title": "", "paragraphs": [] },
+    "challenge": { "title": "", "intro": [] },
+    "solution": { "title": "", "points": [] },
+    "benefits": { "title": "", "items": [] },
+    "howItWorks": { "title": "", "steps": [] },
+    "delayImpact": { "title": "", "items": [] },
+    "quickResponse": { "title": "", "intro": [], "sections": [], "conclusion": "" },
+    "contact": { "phone": "Phone" },
+    "closing": "",
+    "cta": ""
+  },
+    "versions": {
+      "section": {
+        "title": "One Solution. Multiple Versions.",
+        "pricesNote": "All prices inclusive of shipping and taxes",
+        "cta": "ORDER NOW",
+        "scrollHint": "Scroll to switch between versions",
+        "readMore": "Read More",
+        "detailsTitle": "Full specifications"
+      },
+      "modal": {
+        "close": "Close"
+      },
+      "items": {
+        "survivalCeiling": {
+          "title": "Protek Light",
+          "mount": "Ceiling-Mounted Version",
+          "price": "599 SAR",
+          "imageAlt": "Survival Ceiling Device",
+        "description": [
+  "Protek Light: A smart medical safety device that detects falls and health emergencies 24/7 without cameras, equipped with intelligent LED lighting.",
+  "Voice Command: Request assistance instantly using only your voice, ensuring support arrives at the right moment without pressing any buttons.",
+  "Learning Mode: Allows the device to recognize your unique speech patterns and language style for more accurate and effortless responses over time.",
+  "Full Coverage: Provides immediate safety and area coverage, sending instant alerts to the application within 3–10 seconds."
+]
+        },
+        "survivalWall": {
+          "title": "Protek OG",
+          "mount": "Wall-Mounted Version",
+          "price": "599 SAR",
+          "imageAlt": "Survival Wall Device",
+       "description": [
+  "Protek OG: A wall-mounted smart medical safety device that detects falls and health emergencies 24/7 without cameras or manual intervention.",
+  "Voice Command: Patients can request assistance instantly using only their voice, ensuring support arrives when every second matters—no buttons required.",
+  "Learning Mode: Features Personal AI that recognizes unique speech patterns and language styles for increasingly accurate and effortless responses.",
+  "Precise Safety: Provides dedicated area coverage and sends instant alerts to the app within 3–10 seconds without the need for wearable trackers."
+]
+        },
+        "geminiO8f5": {
+          "title": "Protek Mini",
+          "mount": "Economic Ceiling Version",
+          "price": "499 SAR",
+          "imageAlt": "Survival Mini Device",
+          "description": [
+  "Protek Mini: A smart, ceiling-mounted safety device that detects falls and health emergencies automatically without cameras or manual intervention.",
+  "Full Coverage: Specially designed for ceiling installation to provide complete area monitoring and 24/7 protection with no buttons required.",
+  "Instant Alerts: Operates silently to deliver peace of mind, sending critical notifications to the mobile application within 3–10 seconds.",
+  "Note: This essential version focuses on core safety and does not include voice command functionality or the personal Learning Mode."
+]
+        }
+      }
+    },
+   "ambIntro": {
+  "kicker": "About Protek",
+  "title": "Your Safety, Reimagined",
+  "imageAlt": "Smart Safety Device",
+  "readMore": "Read More",
+  "body": [
+    "We provide cutting-edge medical safety solutions designed for the modern home.",
+    "Our devices use advanced AI to ensure privacy while providing 24/7 protection."
+  ],
+  "bullets": [
+    "No cameras used for maximum privacy",
+    "Instant 3-10 second alert response",
+    "No wearable devices required"
+  ]
+},
+"iphoneShowcase": {
+    "kicker": "Smart Protection System",
+    "items": [
+      {
+        "id": "red-alert",
+        "title": "Critical Emergency",
+        "body": " Red Light: Instant alarm for all fall detections. An urgent notification is sent to the app within seconds for immediate intervention.",
+        "imageAlt": "Red Alert"
+      },
+      {
+        "id": "yellow-warning",
+        "title": "Stasis Monitoring",
+        "body": " Yellow Light: Detects abnormal immobility, such as fainting without falling or cardiac arrest, sending an instant alert to the app.",
+        "imageAlt": "Yellow Warning"
+      },
+      {
+        "id": "green-safe",
+        "title": "Safe Status",
+        "body": " Green Light: Total peace of mind. Indicates that a person is in the bathroom and their status/movement is normal.",
+        "imageAlt": "Green Status"
+      },
+      {
+        "id": "blue-idle",
+        "title": "Standby Mode",
+        "body": " Blue Light: Device is online and connected, indicating that the bathroom is currently unoccupied.",
+        "imageAlt": "Blue Idle"
+      }
+    ]
+  }
+  }
+

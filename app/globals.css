@@ -1,26 +1,102 @@
 @import "tailwindcss";
 
 :root {
+  /* ألوان أساسية للـ app */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #00102e;
+
+  /* ألوانك الجاهزة (من ووردبريس مثلاً) */
+  --wp--preset--color--black: #34819a;
+  --wp--preset--color--cyan-bluish-gray: #abb8c3;
+  --wp--preset--color--white: #fff;
+  --wp--preset--color--pale-pink: #f78da7;
+  --wp--preset--color--vivid-red: #cf2e2e;
+  --wp--preset--color--luminous-vivid-orange: #ff6900;
+  --wp--preset--color--luminous-vivid-amber: #fcb900;
+  --wp--preset--color--light-green-cyan: #7bdcb5;
+  --wp--preset--color--vivid-green-cyan: #00d084;
+  --wp--preset--color--pale-cyan-blue: #8ed1fc;
+  --wp--preset--color--vivid-cyan-blue: #0693e3;
+  --wp--preset--color--vivid-purple: #9b51e0;
+  --wp--preset--color--foreground: #34819a;
+  --wp--preset--color--background: #fff;
+  --wp--preset--color--primary: #34819a;
+  --wp--preset--color--secondary: #cde8ec;
+  --wp--preset--color--section-background: #93c2d0;
+  --wp--preset--color--background-secondary: #efefef;
+  --wp--preset--color--body-text: #8d9297;
+  --wp--preset--color--text-link: #2c5514;
+  --wp--preset--color--heading: #00102e;
+  --wp--preset--color--border: #f2f2f2;
+  --wp--preset--color--tertiary: #c3d9e7;
+  --wp--preset--color--input-field: #fafafa;
+  --wp--preset--color--boulder: #777;
+  --wp--preset--color--coffee: #7d6043;
+  --wp--preset--color--cyan: #25d6a2;
+  --wp--preset--color--dark-blue: #00102e;
+  --wp--preset--color--sky-blue: #30b4da;
+  /* RGB helper for overlays */
+  --amb-sky-blue-rgb: 48 180 218;
+  --wp--preset--color--dark-green: #0fb36c;
+  --wp--preset--color--lite-green: #6ba518;
+  --wp--preset--color--purple: #c74a73;
+  --wp--preset--color--dark-purple: #9261c6;
+  --wp--preset--color--orange: #f78550;
+  --wp--preset--color--lite-red: #f9556d;
+  --wp--preset--color--hexadecimal: #27808c;
+  --wp--preset--color--pink: #ff6b98;
+
+  /* ممكن تكمل باقي المتغيرات لو محتاجها، بس دول أهم الألوان */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-primary: var(--wp--preset--color--primary);
+  --color-sky: var(--wp--preset--color--sky-blue);
+  --color-secondary: var(--wp--preset--color--secondary);
+  --color-heading: var(--wp--preset--color--heading);
+  --color-main: var(--wp--preset--color--orange);
+  --font-sans: var(--font-cairo);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-cairo), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  min-height: 100vh;
 }
+
+/* About page background */
+.amb-about-bg {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgb(0 16 46 / 0.55),
+      rgb(var(--amb-sky-blue-rgb) / 0.45)
+    ),
+    url("/Untitled-6.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.font-rubik {
+  font-family: var(--font-rubik), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.lazyload,
+.lazyloading {
+  max-width: 100%;
+}
+
