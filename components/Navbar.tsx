@@ -58,7 +58,7 @@ export default function Navbar() {
         className={cn(
           "fixed inset-x-0 top-0 z-[80] w-full transition-all duration-300",
           scrolled
-            ? "bg-white/80 backdrop-blur-md dark:bg-black/80 shadow-sm"
+            ? "bg-white/80 backdrop-blur-md dark:bg-primary/80 shadow-sm"
             : "bg-primary dark:bg-primary/90"
         )}
       >
@@ -120,7 +120,7 @@ export default function Navbar() {
 
             <Link
               href="/our-product"
-              className="ml-6 rounded-full bg-black px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition-all hover:bg-zinc-800 hover:shadow-xl active:scale-95 dark:bg-white dark:text-black shrink-0"
+              className="ml-6 rounded-full bg-black px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition-all hover:bg-main hover:text-white hover:shadow-xl active:scale-95 dark:bg-white dark:text-black shrink-0"
             >
               {t("nav.ourProduct")}
             </Link>
