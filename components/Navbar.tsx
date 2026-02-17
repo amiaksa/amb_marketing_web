@@ -111,7 +111,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={toggleLanguage}
-              className="mx-4 rounded-full border border-black/10 px-4 py-1.5 text-xs font-bold transition hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/10"
+              className="mx-4 rounded-full text-white border border-main px-4 py-1.5 text-xs font-bold transition hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/10"
             >
               {isRtl ? "EN" : "العربية"}
             </button>
@@ -159,7 +159,7 @@ export default function Navbar() {
               exit={{ x: isRtl ? "100%" : "-100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
               className={cn(
-                "fixed top-0 z-[100] h-full w-[85%] max-w-[350px] bg-white p-8 shadow-2xl dark:bg-[#0a0a0a] md:hidden",
+                "fixed top-0 z-[100] h-full w-[85%] max-w-[350px] bg-white p-8 shadow-2xl dark:bg-sky md:hidden",
                 isRtl ? "right-0" : "left-0"
               )}
             >
@@ -188,7 +188,7 @@ export default function Navbar() {
                           onClick={() => setOpen(false)}
                           className={cn(
                             "text-3xl font-bold transition-colors",
-                            active ? "text-primary" : "text-black/40 dark:text-white/40"
+                            active ? "text-primary" : "text-black/40 dark:text-white/80"
                           )}
                         >
                           {t(link.key)}
