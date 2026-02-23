@@ -47,6 +47,11 @@
   --wp--preset--color--pink: #ff6b98;
 
   /* ممكن تكمل باقي المتغيرات لو محتاجها، بس دول أهم الألوان */
+
+  /* Font fallbacks (avoid build-time Google Fonts fetch) */
+  --font-cairo: ui-sans-serif;
+  --font-rubik: ui-sans-serif;
+  --font-geist-mono: ui-monospace;
 }
 
 @theme inline {

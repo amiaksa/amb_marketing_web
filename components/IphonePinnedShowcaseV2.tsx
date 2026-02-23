@@ -30,6 +30,7 @@ export default function IphonePinnedShowcaseV2() {
   const activeIndexRef = useRef(0);
 
   const items = useMemo<Item[]>(() => {
+    const lang = i18n.language;
     const raw = t("iphoneShowcase.items", { returnObjects: true }) as unknown;
     const list = Array.isArray(raw) ? (raw as TranslatedItem[]) : [];
 
@@ -43,7 +44,12 @@ export default function IphonePinnedShowcaseV2() {
     const dataToUse = list.length >= assets.length ? list : [];
 
     return assets.map((asset, idx) => ({
-      ...(dataToUse[idx] || { id: `item-${idx}`, title: "Title", body: "Body", imageAlt: "Alt" }),
+      ...(dataToUse[idx] || {
+        id: `${lang}-item-${idx}`,
+        title: "Title",
+        body: "Body",
+        imageAlt: "Alt",
+      }),
       imageSrc: asset.src,
       themeColor: asset.color,
     }));

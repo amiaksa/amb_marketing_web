@@ -4,8 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import "../i18n/config";
 import { useTranslation } from "react-i18next";
-import FeaturesSection from "./FeaturesSection";
-import DeviceShowcaseSection from "./DeviceShowcaseSection";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },

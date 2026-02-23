@@ -159,7 +159,7 @@ export default function Navbar() {
               exit={{ x: isRtl ? "100%" : "-100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
               className={cn(
-                "fixed top-0 z-[100] h-full w-[85%] max-w-[350px] bg-white p-8 shadow-2xl dark:bg-sky md:hidden",
+                "fixed top-0 z-[100] h-full w-[85%] max-w-[350px] bg-white p-8 shadow-2xl dark:bg-primary md:hidden",
                 isRtl ? "right-0" : "left-0"
               )}
             >

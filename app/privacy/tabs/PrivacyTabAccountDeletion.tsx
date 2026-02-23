@@ -1,13 +1,14 @@
 "use client";
 
 import "@/i18n/config";
+import type { TFunction } from "i18next";
 import { useTranslation } from "react-i18next";
 
 function AccountDeletionContent({
   t,
   dir,
 }: {
-  t: (key: string, opts?: any) => any;
+  t: TFunction;
   dir: "rtl" | "ltr";
 }) {
   const steps = t("accountDeletionPage.deleteSteps", { returnObjects: true }) as string[];

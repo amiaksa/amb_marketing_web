@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Instagram, Linkedin, Send, X } from "lucide-react";
+
 const socials = [
   { name: "WhatsApp", icon: <MessageCircle size={16} />, href: "#", color: "bg-[#25D366]", angle: -90 },
   { name: "Instagram", icon: <Instagram size={16} />, href: "#", color: "bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]", angle: -125 },
@@ -12,23 +13,42 @@ const socials = [
 
 export default function SocialMediaBubble() {
   const [open, setOpen] = useState(false);
-  
-  const radius = 65; // مسافة ملمومة جداً في الكورنر
-  const iconSize = "h-9 w-9"; 
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // إغلاق المنيو عند الضغط خارجها (للموبايل)
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const radius = 65; 
+
+  // دالة التعامل مع الضغط (للموبايل)
+  const handleToggle = () => {
+    // نفتح ونقفل فقط لو الجهاز تاتش أو شاشته صغيرة
+    if (window.innerWidth < 1024) {
+      setOpen(!open);
+    }
+  };
 
   return (
     <div
+      ref={containerRef}
       className="fixed bottom-4 right-10 z-[100]"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      // الـ Hover يعمل فقط على الشاشات الكبيرة (Laptops/Desktops)
+      onMouseEnter={() => { if (window.innerWidth >= 1024) setOpen(true) }}
+      onMouseLeave={() => { if (window.innerWidth >= 1024) setOpen(false) }}
     >
-      {/* منطقة الحساسية (Invisible Area) لضمان عدم غلق المنيو عند التحرك للأيقونات */}
-      <div className="relative flex h-24 w-24 items-end justify-end">
+      <div className="relative flex h-20 w-20 items-end justify-end">
         
         <AnimatePresence>
           {open &&
             socials.map((item, i) => {
-              // حسابات الإحداثيات بناءً على الزاوية
               const x = Math.cos((item.angle * Math.PI) / 180) * radius;
               const y = Math.sin((item.angle * Math.PI) / 180) * radius;
 
@@ -42,13 +62,15 @@ export default function SocialMediaBubble() {
                   animate={{ opacity: 1, x, y, scale: 1 }}
                   exit={{ opacity: 0, x: 0, y: 0, scale: 0 }}
                   whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   transition={{ 
                     type: "spring", 
                     stiffness: 400, 
                     damping: 25,
                     delay: i * 0.03 
                   }}
-                  className={`absolute flex ${iconSize} items-center justify-center rounded-full text-white shadow-lg backdrop-blur-md ${item.color} z-20`}
+                  // حجم الأيقونات: h-9 في الكمبيوتر و h-10 في الموبايل لسهولة اللمس
+                  className={`absolute flex h-9 w-9 lg:h-9 lg:w-9 items-center justify-center rounded-full text-white shadow-lg backdrop-blur-md ${item.color} z-20`}
                 >
                   {item.icon}
                 </motion.a>
@@ -56,9 +78,9 @@ export default function SocialMediaBubble() {
             })}
         </AnimatePresence>
 
-        {/* الزر الرئيسي AMB */}
         <motion.button
-          className="relative z-30 flex h-12 w-12 flex-col items-center justify-center rounded-full bg-black shadow-xl dark:bg-white"
+          onClick={handleToggle}
+          className="relative z-30 flex h-12 w-12 flex-col items-center justify-center rounded-full bg-black shadow-xl dark:bg-white active:scale-95 transition-transform"
           animate={{ scale: open ? 0.9 : 1 }}
         >
           <AnimatePresence mode="wait">

@@ -26,7 +26,7 @@ export default function FeaturesSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative z-20 mx-auto max-w-6xl px-8 pb-20 -mt-18">
+    <section className="relative z-20 mx-auto -mt-[72px] max-w-6xl px-8 pb-20">
       <motion.div
         className="scroll-trigger-ready__worm-wrap grid gap-6 md:grid-cols-3"
         initial="hidden"

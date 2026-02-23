@@ -1,6 +1,7 @@
 "use client";
 
 import "@/i18n/config";
+import type { TFunction } from "i18next";
 import { useTranslation } from "react-i18next";
 
 function BulletList({ items }: { items: string[] }) {
@@ -20,7 +21,7 @@ function ReturnsContent({
   t,
   dir,
 }: {
-  t: (key: string, opts?: any) => any;
+  t: TFunction;
   dir: "rtl" | "ltr";
 }) {
   const returnPoints = t("returnsPage.return.points", { returnObjects: true }) as string[];

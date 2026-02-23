@@ -1,5 +1,6 @@
+import PrivacyTabs from "./PrivacyTabs";
+
 export default function PrivacyPage() {
-  const PrivacyTabs = require("./PrivacyTabs").default;
   return <PrivacyTabs />;
 }
 

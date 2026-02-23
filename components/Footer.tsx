@@ -3,20 +3,22 @@
 import Link from "next/link";
 import "../i18n/config";
 import { useTranslation } from "react-i18next";
-import { 
-  Facebook, 
-  Youtube, 
-  Instagram, 
-  Twitter, 
-  Phone, 
-  MapPin, 
-  MessageCircle, 
-  Music2, 
+import type { LucideIcon } from "lucide-react";
+import {
+  Facebook,
+  Youtube,
+  Instagram,
+  Twitter,
+  Phone,
+  MapPin,
+  MessageCircle,
+  Music2,
   Smartphone,
-  PlayCircle
+  PlayCircle,
 } from "lucide-react";
 
-type FooterLink = { label: string; href: string; icon?: any };
+type FooterLink = { label: string; href: string };
+type SocialLink = FooterLink & { icon: LucideIcon };
 
 export default function Footer() {
   const { t, i18n } = useTranslation();
@@ -32,7 +34,7 @@ export default function Footer() {
     { label: t("nav.privacy"), href: "/privacy" },
   ];
 
-  const social: FooterLink[] = [
+  const social: SocialLink[] = [
     { label: "Facebook", href: "https://facebook.com", icon: Facebook },
     { label: "YouTube", href: "https://youtube.com", icon: Youtube },
     { label: "WhatsApp", href: "https://wa.me/966593737239", icon: MessageCircle },
@@ -107,19 +109,24 @@ export default function Footer() {
               {isRtl ? "تابعنا" : "Social Media"}
             </p>
             <div className="grid grid-cols-3 gap-3 w-fit">
-              {social.map((l) => (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-sky-400 transition-all group w-20 h-20"
-                  title={l.label}
-                >
-                  <l.icon size={20} className="group-hover:text-sky transition-colors" />
-                  <span className="text-[10px] mt-1 opacity-50 group-hover:opacity-100">{l.label}</span>
-                </a>
-              ))}
+              {social.map((l) => {
+                const Icon = l.icon;
+                return (
+                  <a
+                    key={l.label}
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-sky-400 transition-all group w-20 h-20"
+                    title={l.label}
+                  >
+                    <Icon size={20} className="group-hover:text-sky transition-colors" />
+                    <span className="text-[10px] mt-1 opacity-50 group-hover:opacity-100">
+                      {l.label}
+                    </span>
+                  </a>
+                );
+              })}
             </div>
           </div>
 

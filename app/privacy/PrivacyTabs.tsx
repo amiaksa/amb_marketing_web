@@ -4,6 +4,10 @@ import Link from "next/link";
 import "@/i18n/config";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import PrivacyTabPrivacyPolicy from "./tabs/PrivacyTabPrivacyPolicy";
+import PrivacyTabAccountDeletion from "./tabs/PrivacyTabAccountDeletion";
+import PrivacyTabTerms from "./tabs/PrivacyTabTerms";
+import PrivacyTabReturns from "./tabs/PrivacyTabReturns";
 
 type TabKey = "privacy" | "accountDeletion" | "terms" | "returns";
 
@@ -11,12 +15,6 @@ export default function PrivacyTabs() {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.language === "ar";
   const [active, setActive] = useState<TabKey>("privacy");
-
-  // Use require() to avoid TS module resolution quirks in some setups
-  const PrivacyTabPrivacyPolicy = require("./tabs/PrivacyTabPrivacyPolicy").default;
-  const PrivacyTabAccountDeletion = require("./tabs/PrivacyTabAccountDeletion").default;
-  const PrivacyTabTerms = require("./tabs/PrivacyTabTerms").default;
-  const PrivacyTabReturns = require("./tabs/PrivacyTabReturns").default;
 
   const tabs = useMemo(
     () =>

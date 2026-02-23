@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft } from "lucide-react";
 import "../i18n/config";
 import { useTranslation } from "react-i18next";
 
