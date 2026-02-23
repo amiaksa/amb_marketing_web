@@ -1,21 +1,19 @@
 "use client";
 import React, { Suspense, useLayoutEffect, useRef } from "react";
+import * as THREE from "three"; // <-- مهم هنا
 import { Canvas, useLoader } from "@react-three/fiber";
-// استخدم three-stdlib بدل three/examples
 import { OBJLoader, MTLLoader } from "three-stdlib";
 import { OrbitControls, Center, Stage, Html } from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// تسجيل الـ Plugin الخاص بـ GSAP
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 function Scene() {
-  const meshRef = useRef<THREE.Object3D>(null);
-  
-  // تحميل الخامات والموديل
+  const meshRef = useRef<THREE.Object3D>(null); // النوع موجود الآن
+
   const materials = useLoader(MTLLoader, "/asset_2ldpi.mtl");
   const obj = useLoader(OBJLoader, "/asset_2ldpi.obj", (loader) => {
     materials.preload();
@@ -25,7 +23,6 @@ function Scene() {
   useLayoutEffect(() => {
     if (!meshRef.current) return;
 
-    // إنشاء الجدول الزمني للحركة مربوطاً بالسكرول
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".section-wrapper",
@@ -35,7 +32,6 @@ function Scene() {
       },
     });
 
-    // -- مراحل الدوران مع ease لتحريك سلس --
     tl.to(meshRef.current.rotation, { y: Math.PI / 2, ease: "power1.inOut" }, "step1")
       .to(meshRef.current.rotation, { y: Math.PI, ease: "power1.inOut" }, "step2")
       .to(meshRef.current.rotation, { x: 0.2, y: Math.PI * 1.5, ease: "power1.inOut" }, "step3")
@@ -52,7 +48,6 @@ function Scene() {
 export default function OurProductPage() {
   return (
     <div className="section-wrapper" style={{ position: "relative", overflow: "clip" }}>
-      {/* حاوية Canvas الثابتة */}
       <div style={{ 
         position: "sticky",
         top: 0,
@@ -74,7 +69,6 @@ export default function OurProductPage() {
         </Canvas>
       </div>
 
-      {/* المحتوى النصي موزع على أقسام */}
       <div style={{ position: "relative", zIndex: 2, marginTop: "-100vh" }}>
         <section style={sectionStyle}>
           <div style={contentBox}>
@@ -108,7 +102,6 @@ export default function OurProductPage() {
   );
 }
 
-// --- تنسيقات بسيطة ---
 const sectionStyle = {
   height: "100vh",
   display: "flex",
