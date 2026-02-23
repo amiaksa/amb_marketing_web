@@ -1,8 +1,8 @@
 "use client";
 import React, { Suspense, useLayoutEffect, useRef } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
+// استخدم three-stdlib بدل three/examples
+import { OBJLoader, MTLLoader } from "three-stdlib";
 import { OrbitControls, Center, Stage, Html } from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,11 +13,11 @@ if (typeof window !== "undefined") {
 }
 
 function Scene() {
-  const meshRef = useRef();
+  const meshRef = useRef<THREE.Object3D>(null);
   
   // تحميل الخامات والموديل
-  const materials = useLoader(MTLLoader, "/Asset 2ldpi.mtl");
-  const obj = useLoader(OBJLoader, "/Asset 2ldpi.obj", (loader) => {
+  const materials = useLoader(MTLLoader, "/asset_2ldpi.mtl");
+  const obj = useLoader(OBJLoader, "/asset_2ldpi.obj", (loader) => {
     materials.preload();
     loader.setMaterials(materials);
   });
@@ -31,18 +31,17 @@ function Scene() {
         trigger: ".section-wrapper",
         start: "top top",
         end: "bottom bottom",
-        scrub: 1, // حركة ناعمة مرتبطة بسرعة السكرول
+        scrub: 1,
       },
     });
 
-    // -- مراحل الدوران --
-    tl.to(meshRef.current.rotation, { y: Math.PI / 2 }, "step1")   // يلف للجنب (90 درجة)
-      .to(meshRef.current.rotation, { y: Math.PI }, "step2")       // يلف للضهر تماماً (180 درجة) لشرح التفاصيل الخلفية
-      .to(meshRef.current.rotation, { x: 0.2, y: Math.PI * 1.5 }, "step3") // يميل قليلاً ويلف للجانب الآخر
-      .to(meshRef.current.rotation, { x: 0, y: Math.PI * 2 }, "step4");    // يعود للوجه الأصلي (دورة كاملة)
+    // -- مراحل الدوران مع ease لتحريك سلس --
+    tl.to(meshRef.current.rotation, { y: Math.PI / 2, ease: "power1.inOut" }, "step1")
+      .to(meshRef.current.rotation, { y: Math.PI, ease: "power1.inOut" }, "step2")
+      .to(meshRef.current.rotation, { x: 0.2, y: Math.PI * 1.5, ease: "power1.inOut" }, "step3")
+      .to(meshRef.current.rotation, { x: 0, y: Math.PI * 2, ease: "power1.inOut" }, "step4");
 
     return () => {
-      // تنظيف الـ ScrollTrigger عند مغادرة الصفحة
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
@@ -53,16 +52,15 @@ function Scene() {
 export default function OurProductPage() {
   return (
     <div className="section-wrapper" style={{ position: "relative", overflow: "clip" }}>
-      
-      {/* حاوية الـ Canvas الثابتة أثناء السكرول */}
+      {/* حاوية Canvas الثابتة */}
       <div style={{ 
-        position: "sticky", 
-        top: 0, 
-        left: 0, 
-        width: "100vw", 
-        height: "100vh", 
+        position: "sticky",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
         zIndex: 1,
-        pointerEvents: "none" // يسمح بالسكرول من خلال الكانفاس
+        pointerEvents: "none"
       }}>
         <Canvas camera={{ position: [0, 0, 5], fov: 45 }} style={{ pointerEvents: "all" }}>
           <Suspense fallback={<Html center>جاري التحميل...</Html>}>
@@ -76,10 +74,8 @@ export default function OurProductPage() {
         </Canvas>
       </div>
 
-      {/* المحتوى النصي الموزع على أقسام (Sections) */}
+      {/* المحتوى النصي موزع على أقسام */}
       <div style={{ position: "relative", zIndex: 2, marginTop: "-100vh" }}>
-        
-        {/* القسم الأول: الوجه */}
         <section style={sectionStyle}>
           <div style={contentBox}>
             <h1>إبداع من كل زاوية</h1>
@@ -87,15 +83,13 @@ export default function OurProductPage() {
           </div>
         </section>
 
-        {/* القسم الثاني: الجانب */}
         <section style={sectionStyle}>
-          <div style={{...contentBox, marginLeft: 'auto'}}>
+          <div style={{ ...contentBox, marginLeft: 'auto' }}>
             <h2>انسيابية التصميم</h2>
             <p>تفاصيل دقيقة تم صقلها بعناية فائقة.</p>
           </div>
         </section>
 
-        {/* القسم الثالث: الظهر (نقطة تركيزك) */}
         <section style={sectionStyle}>
           <div style={contentBox}>
             <h2>تفاصيل الظهر</h2>
@@ -103,27 +97,24 @@ export default function OurProductPage() {
           </div>
         </section>
 
-        {/* القسم الرابع: النهاية */}
         <section style={sectionStyle}>
-          <div style={{...contentBox, margin: '0 auto'}}>
+          <div style={{ ...contentBox, margin: '0 auto' }}>
             <h2>الجودة الشاملة</h2>
             <p>منتج صُمم ليدوم معك طويلاً.</p>
           </div>
         </section>
-
       </div>
     </div>
   );
 }
 
 // --- تنسيقات بسيطة ---
-
 const sectionStyle = {
   height: "100vh",
   display: "flex",
   alignItems: "center",
   padding: "0 10%",
-  pointerEvents: "none", 
+  pointerEvents: "none",
 };
 
 const contentBox = {
@@ -134,5 +125,5 @@ const contentBox = {
   maxWidth: "450px",
   boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
   pointerEvents: "all",
-  color: "#333"
+  color: "#333",
 };
